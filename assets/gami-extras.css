@@ -1,0 +1,67 @@
+/* GAMI extras: styles for the video showcase and the new About / How we work pages.
+   Everything else reuses the site's existing classes. */
+
+/* ---------- Video showcase (moved here from inline <style> in index.html) ---------- */
+.gami-showcase{
+  --g-bg:#ddf0ea; --g-green:#2c7a6b; --g-coral:#e8745a; --g-mint:#aee5d3; --g-dark:#072c3a;
+  --g-serif:Georgia,serif; --g-sans:system-ui,sans-serif; --g-mono:ui-monospace,Menlo,monospace;
+  background:var(--g-bg); padding:clamp(56px,8vw,110px) 24px; position:relative; overflow:hidden;
+}
+.gami-showcase .gs-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,90px);align-items:center}
+.gami-showcase .gs-eyebrow{display:flex;align-items:center;gap:12px;font-family:var(--g-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#4d6366;margin-bottom:22px}
+.gami-showcase .gs-eyebrow:before{content:"";width:28px;height:1px;background:var(--g-green)}
+.gami-showcase .gs-eyebrow b{color:var(--g-coral);font-weight:400}
+.gami-showcase h2{font-family:var(--g-sans);font-weight:400;font-size:clamp(40px,6.4vw,76px);line-height:.98;letter-spacing:-.03em;color:var(--g-green);margin:0 0 18px}
+.gami-showcase h2 em{display:block;font-family:var(--g-serif);font-style:italic;letter-spacing:-.01em;color:var(--g-coral)}
+.gami-showcase p.gs-desc{font-family:var(--g-sans);font-size:15px;line-height:1.7;color:#3f5659;max-width:400px;margin:0 0 28px}
+.gami-showcase .gs-tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px;padding:0;list-style:none}
+.gami-showcase .gs-tags li{font-family:var(--g-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--g-green);border:1px solid rgba(44,122,107,.45);padding:7px 11px}
+.gami-showcase .gs-cta{display:inline-flex;gap:10px;align-items:center;font-family:var(--g-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--g-dark);text-decoration:none;border-bottom:1px solid var(--g-dark);padding-bottom:5px}
+.gami-showcase .gs-media{position:relative;justify-self:center;width:min(100%,300px)}
+.gami-showcase .gs-media:before{content:"";position:absolute;inset:18px -18px -18px 18px;background:var(--g-mint);z-index:0}
+.gami-showcase .gs-frame{position:relative;z-index:1;aspect-ratio:9/16;background:var(--g-dark);overflow:hidden;box-shadow:0 24px 60px rgba(7,44,58,.28)}
+.gami-showcase video{width:100%;height:100%;object-fit:cover;display:block}
+.gami-showcase .gs-chip{position:absolute;z-index:2;left:-26px;bottom:34px;background:var(--g-mint);color:var(--g-dark);padding:12px 16px;font-family:var(--g-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;line-height:1.5;box-shadow:0 10px 24px rgba(7,44,58,.18)}
+.gami-showcase .gs-chip strong{display:block;font-family:var(--g-sans);font-size:15px;letter-spacing:-.01em;text-transform:none;font-weight:600;margin-top:3px}
+.gami-showcase .gs-sound{position:absolute;z-index:3;right:12px;top:12px;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;background:rgba(7,44,58,.72);color:#fff;font-size:16px;backdrop-filter:blur(6px)}
+.gami-showcase .gs-sound:focus-visible,.gami-showcase .gs-cta:focus-visible{outline:2px solid var(--g-dark);outline-offset:3px}
+.gami-showcase .gs-badge{position:absolute;z-index:2;top:-22px;right:-22px;width:78px;height:78px;border-radius:50%;background:var(--g-coral);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--g-mono);font-size:9px;letter-spacing:.1em;line-height:1.5;text-transform:uppercase;animation:gsSpin 18s linear infinite}
+.gami-showcase .gs-badge span{animation:gsSpin 18s linear infinite reverse;display:block}
+@keyframes gsSpin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.gami-showcase .gs-badge,.gami-showcase .gs-badge span{animation:none}}
+@media (max-width:760px){
+  .gami-showcase .gs-wrap{grid-template-columns:1fr}
+  .gami-showcase .gs-media{order:2;width:min(80%,280px);margin-right:18px}
+  .gami-showcase .gs-chip{left:-12px}
+}
+
+/* ---------- Company facts (About) ---------- */
+.gp-facts{margin:28px 0 0;padding:0}
+.gp-facts>div{display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:6px 24px;padding:14px 0;border-top:1px solid color-mix(in srgb,currentColor 18%,transparent)}
+.gp-facts>div:last-child{border-bottom:1px solid color-mix(in srgb,currentColor 18%,transparent)}
+.gp-facts dt{margin:0;font-size:13px;opacity:.7}
+.gp-facts dd{margin:0;font-size:15px;line-height:1.55;overflow-wrap:anywhere}
+.gp-facts a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.gp-facts-cta{margin-top:24px}
+
+/* ---------- Document lists (How we work) ---------- */
+.gp-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px;margin-top:32px}
+.gp-cols h3{margin:0 0 10px;font-size:15px;font-weight:600}
+.gp-cols ul{list-style:none;margin:0;padding:0}
+.gp-cols li{padding:11px 0;border-top:1px solid color-mix(in srgb,currentColor 18%,transparent);font-size:15px;line-height:1.5}
+
+/* ---------- FAQ ---------- */
+.gp-faq{max-width:760px}
+.gp-faq details{border-top:1px solid color-mix(in srgb,currentColor 18%,transparent)}
+.gp-faq details:last-child{border-bottom:1px solid color-mix(in srgb,currentColor 18%,transparent)}
+.gp-faq summary{cursor:pointer;list-style:none;position:relative;padding:18px 40px 18px 0;font-size:17px;font-weight:600;line-height:1.4}
+.gp-faq summary::-webkit-details-marker{display:none}
+.gp-faq summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:400}
+.gp-faq details[open] summary::after{content:"\2013"}
+.gp-faq summary:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.gp-faq p{margin:0 0 20px;max-width:62ch;line-height:1.65;opacity:.85}
+
+@media (max-width:640px){
+  .gp-facts>div{grid-template-columns:1fr}
+  .gp-cols{grid-template-columns:1fr}
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://marine.gamicorp-indonesia.com/sitemap.xml
